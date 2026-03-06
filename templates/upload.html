@@ -25,9 +25,24 @@
         <span class="welcome">Welcome, {{ username }}</span>
         <a href="/logout" class="logout-btn">Logout</a>
     </div>
+</select>
 
 </nav>
 <div class="upload-container">
+
+    <div class="language-box">
+
+    <label>🌐 Select Language</label>
+
+        <select name="language" id="languageSelect" form="uploadForm">
+            <option value="English">English</option>
+            <option value="Hindi">हिंदी (Hindi)</option>
+            <option value="Punjabi">ਪੰਜਾਬੀ (Punjabi)</option>
+            <option value="Marathi">मराठी (Marathi)</option>
+            <option value="Tamil">தமிழ் (Tamil)</option>
+        </select>
+
+    </div>
 
     <div class="upload-card">
         <h1>🌿 Leaf Nutrient Analysis</h1>
@@ -35,13 +50,12 @@
             Upload a clear image of a plant leaf to detect nutrient deficiencies
         </p>
 
-        <form action="/predict" method="POST" enctype="multipart/form-data">
+        <form id="uploadForm" action="/predict" method="POST" enctype="multipart/form-data">
 
             <label class="file-upload">
                 <input type="file" name="file" id="fileInput" required>
                 <span id="fileText">Choose Leaf Image</span>
             </label>
-
             <button type="submit">Analyze Leaf</button>
 
         </form>

@@ -113,6 +113,7 @@ def predict():
     
 
     file = request.files["file"]
+    language = request.form.get("language", "English")
     os.makedirs("static", exist_ok=True)
 
     filename = secure_filename(file.filename)
@@ -151,7 +152,7 @@ def predict():
     You are an expert agricultural scientist.
 
     Detected nutrient deficiency: {predicted_class}
-    
+    Explain the problem and solution for farmers in {language}.
     Provide a structured professional report using this exact format:
     
 
@@ -212,7 +213,8 @@ def predict():
     confidence_message=confidence_message,
     explanation=explanation,
     file_name=filename,
-    quantity=quantity
+    quantity=quantity,
+    language=language
 )
 
 if __name__ == "__main__":
