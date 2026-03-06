@@ -147,7 +147,7 @@ http://127.0.0.1:5000
 ```
 
 
-### 📊 Example Workflow
+# 📊 Example Workflow
 
 Login or Register
 
@@ -161,7 +161,7 @@ Detailed AI report is displayed
 
 Result is saved in history
 
-### 🌾 Impact
+# 🌾 Impact
 
 LeafGuard AI helps farmers:
 
@@ -176,7 +176,7 @@ Improve crop yield
 Make better agricultural decisions
 
 
-### 🔮 Future Improvements
+# 🔮 Future Improvements
 
 Multi-language support for farmers
 
@@ -188,7 +188,7 @@ Soil health integration
 
 Satellite crop monitoring
 
-### 👨‍💻 Author
+# 👨‍💻 Author
 
 Sahil Bhardwaj
 
