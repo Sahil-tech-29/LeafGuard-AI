@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaf Nutrient Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Leaf Nutrient Analysis Report</h1>
+        <p class="subtitle">AI-powered agricultural diagnostic summary</p>
+    </div>
+
+    <!-- SUMMARY PANEL -->
+    <div class="summary-box">
+        <div class="summary-item">
+            <span>Uploaded Image</span>
+            <strong>{{ file_name }}</strong>
+        </div>
+
+        <div class="summary-item">
+            <span>Nutrient Identified</span>
+            <strong>{{ prediction }}</strong>
+        </div>
+
+        <div class="summary-item">
+            <span>Recommended Action</span>
+            <strong>{{ suggestion }}</strong>
+        </div>
+
+        <div class="summary-item">
+            <span>Prediction Confidence</span>
+            <strong>{{ confidence }}%</strong>
+        </div>
+
+        <div class="summary-item">
+            <span>Confidence Level</span>
+            <strong>{{ confidence_message }}</strong>
+        </div>
+
+        <div class="summary-item">
+            <span>Recommended Quantity</span>
+            <strong>{{ quantity }}</strong>
+        </div>
+    </div>
+
+    <div class="result-image">
+        <img src="{{ url_for('static', filename=file_name) }}" alt="Leaf Image">
+    </div>
+
+    <!-- REPORT -->
+    <div class="analysis-section">
+        <h2>Detailed Agronomic Analysis</h2>
+        <div class="analysis-content">
+            {{ explanation | safe }}
+        </div>
+    </div>
+
+    <!-- FOOTER ACTION -->
+    <div class="analyze-again">
+        <button onclick="window.location.href='/upload'">
+        🌿 Analyze Another Leaf
+        </button>
+    </div>
+
+</div>
+
+</body>
+</html>

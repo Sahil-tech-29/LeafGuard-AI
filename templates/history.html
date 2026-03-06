@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaf History</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌾 Previous Leaf Analyses</h1>
+
+<div class="history-grid">
+
+{% for item in records %}
+
+<div class="history-card">
+
+<img src="{{ url_for('static', filename=item.image) }}">
+
+<h3>{{ item.prediction }}</h3>
+
+<p><strong>Fertilizer:</strong> {{ item.fertilizer }}</p>
+
+<p><strong>Quantity:</strong> {{ item.quantity }}</p>
+
+<p class="date">{{ item.date.strftime("%d %B %Y") }}</p>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>
